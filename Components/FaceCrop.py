@@ -34,7 +34,7 @@ def crop_to_vertical(input_video_path, output_video_path):
         if not ret:
             break
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
+        faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=8, minSize=(30, 30))
         if len(faces) > 0:
             # Get largest face
             best_face = max(faces, key=lambda f: f[2] * f[3])
